@@ -1,16 +1,14 @@
-# viversolidario
+Viver-Solidario
+Objetivo Facilitar doações e conectar doadores a causas sociais, tornando o apoio à ONG Viver mais acessível e eficiente.
 
-A new Flutter project.
+Problema Muitas pessoas querem ajudar, mas não sabem como. Empresas e indivíduos enfrentam dificuldades para doar alimentos, produtos ou dinheiro de forma rápida e segura.
 
-## Getting Started
+Solução Um aplicativo que centraliza todas as formas de doação disponíveis para a ONG Viver, permitindo que doadores escolham como contribuir: ✅ Doações financeiras (Pix, PayPal, PicPay) ✅ Doação de alimentos e produtos ✅ Cadastro de voluntários e empresas parceiras ✅ Agendamento de coletas e entrega de doações ✅ Rastreamento do impacto social das contribuições
 
-This project is a starting point for a Flutter application.
+Público-Alvo 👥 Pessoas físicas interessadas em ajudar 🏢 Empresas que querem contribuir 🤝 Voluntários e parceiros da ONG
 
-A few resources to get you started if this is your first Flutter project:
+Diferenciais 🚀 Facilidade: Doações em poucos cliques 📍 Geolocalização: Encontre pontos de coleta próximos 📢 Engajamento: Notificações sobre campanhas e eventos 📊 Transparência: Relatórios do impacto das doações
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Impacto Social 💛 Redução do desperdício de alimentos 📦 Aumento do apoio à ONG e às famílias assistidas 🌎 Sustentabilidade e responsabilidade social O app Viver Solidário torna a doação mais simples e acessível, conectando quem quer ajudar com quem precisa.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Junte-se a essa causa e faça a diferença! 🌱💖
