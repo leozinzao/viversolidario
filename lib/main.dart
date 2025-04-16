@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:viversolidario/screens/home_screen.dart';
-import 'package:viversolidario/screens/doacoes_screen.dart';
-import 'package:viversolidario/screens/cadastro_screen.dart';
-import 'package:viversolidario/screens/login_screen.dart';
-import 'package:viversolidario/screens/recuperar_senha_screen.dart';
+import 'HomeScreen.dart';
 
 void main() {
   runApp(const ViverSolidarioApp());
@@ -17,15 +13,49 @@ class ViverSolidarioApp extends StatelessWidget {
     return MaterialApp(
       title: 'Viver Solidário',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        primaryColor: Colors.white,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(fontFamily: 'Poppins'),
+          bodyText2: TextStyle(fontFamily: 'Poppins'),
+        ),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.grey,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(fontFamily: 'Poppins'),
+          bodyText2: TextStyle(fontFamily: 'Poppins'),
+        ),
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
-        '/doacoes': (context) => const DoacoesScreen(),
-        '/cadastro': (context) => const CadastroScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/recuperar-senha': (context) => const RecuperarSenhaScreen(),
+        '/doacoes': (context) => const Scaffold(
+              appBar: AppBar(title: Text('Doações')),
+              body: Center(child: Text('Tela de Doações')),
+            ),
+        '/contato': (context) => const Scaffold(
+              appBar: AppBar(title: Text('Contato')),
+              body: Center(
+                  child: Text(
+                      'Tela de Contato para doação via Conta de Luz ou Carnê Solidário')),
+            ),
+        // Additional routes for the Drawer sections:
+        '/sobre': (context) => const Scaffold(
+              appBar: AppBar(title: Text('Sobre')),
+              body: Center(child: Text('Tela Sobre a Viver Solidário')),
+            ),
+        '/eventos': (context) => const Scaffold(
+              appBar: AppBar(title: Text('Eventos')),
+              body: Center(child: Text('Tela de Eventos')),
+            ),
+        '/suporte': (context) => const Scaffold(
+              appBar: AppBar(title: Text('Suporte')),
+              body: Center(child: Text('Tela de Suporte')),
+            ),
       },
     );
   }

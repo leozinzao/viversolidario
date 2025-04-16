@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          // Actions, displayed in a row but wrapped to next line if needed.
+          // Actions, displayed using Wrap to allow line breaks.
           Wrap(
             spacing: 12,
             runSpacing: 8,
@@ -44,13 +44,73 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  // Drawer widget to provide lateral navigation to additional sections.
+  Widget _buildDrawer(BuildContext context) {
+    return Drawer(
+      child: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.amber,
+              ),
+              child: Center(
+                child: Text(
+                  'Outras Seções',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.info),
+              title: const Text('Sobre'),
+              onTap: () {
+                // Navegar para a tela "Sobre"
+                Navigator.pushNamed(context, '/sobre');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.event),
+              title: const Text('Eventos'),
+              onTap: () {
+                // Navegar para a tela de "Eventos"
+                Navigator.pushNamed(context, '/eventos');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.attach_money),
+              title: const Text('Doações'),
+              onTap: () {
+                // Navegar para a tela de "Doações"
+                Navigator.pushNamed(context, '/doacoes');
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.contact_support),
+              title: const Text('Suporte'),
+              onTap: () {
+                // Navegar para a tela de "Suporte"
+                Navigator.pushNamed(context, '/suporte');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Use a unified button style with a yellow and white theme.
+    // Unified button style with a yellow (amber) and white theme.
     final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      backgroundColor: Colors.white, // button background
-      foregroundColor: Colors.amber, // text and icon color
+      backgroundColor: Colors.white, // Button background
+      foregroundColor: Colors.amber, // Text and icon color
       elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
@@ -63,6 +123,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.amber,
         centerTitle: true,
       ),
+      drawer: _buildDrawer(context),
       body: Container(
         // Using a subtle gradient from white to a light yellow.
         decoration: const BoxDecoration(
@@ -76,12 +137,12 @@ class HomeScreen extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           children: [
             const SizedBox(height: 20),
-            // Welcome message - not sliding, it's instantly visible.
+            // Welcome message – always visible at the top.
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
+              child: const Text(
                 'Faça parte desta história de amor ao próximo! Para apoiar a Viver e as crianças e adolescentes beneficiados pela instituição, escolha uma das opções abaixo:',
-                style: const TextStyle(fontSize: 18, color: Colors.black87),
+                style: TextStyle(fontSize: 18, color: Colors.black87),
                 textAlign: TextAlign.center,
               ),
             ),
